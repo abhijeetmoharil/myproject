@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<meta charset="ISO-8859-1">
+<title>Customer Management System</title>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+		crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+	<br>
+			<div class="text-center">
+				<h3 >Customer List</h3>
+				
+			</div>
+			
+			<!-- search 
+			 <div class="search-container  m-5">
+			
+			<input type="text" class="form-control w-100" placeholder="Search Aadhar Number"/>
+			
+			</div>-->
+			<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Search Aadhar No..." aria-label="Recipient's username" aria-describedby="button-addon2">
+  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+</div>
+			
+			
+		<table class="table table-striped table-bordered">
+			<thead class="table-dark">
+			<tr>
+				<th> Customer Name</th>
+				<th> Loan Amount</th>
+				<th> Bank Name</th>
+				<th> Aadhar No</th>
+			</tr>
+			</thead>
+			
+			<tbody>
+			<tr th:each="user: ${users}">
+				<td th:text ="${user.cName}"></td>
+				<td th:text ="${user.lamount}"></td>
+				<td th:text ="${user.bankdetails}"></td>
+				<td th:text ="${user.aadharno}"></td>
+			</tbody>
+			
+			</table>	
+			
+	</div>
+
+</body>
+</html>
